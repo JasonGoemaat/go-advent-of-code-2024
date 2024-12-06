@@ -12,6 +12,7 @@ import (
 	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day03"
 	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day04"
 	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day05"
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day06"
 	"github.com/JasonGoemaat/go-advent-of-code-2024/util"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -62,6 +63,7 @@ func init() {
 	rootCmd.AddCommand(day03.Day03Cmd)
 	rootCmd.AddCommand(day04.Day04Cmd)
 	rootCmd.AddCommand(day05.Day05Cmd)
+	rootCmd.AddCommand(day06.Day06Cmd)
 }
 
 // initConfig reads in config file and ENV variables if set.
