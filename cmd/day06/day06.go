@@ -27,7 +27,7 @@ var Day06Cmd = &cobra.Command{
 		input := util.LoadString("cmd/day06/data/input.txt")
 		fmt.Println("Part 1 Sample:", SolvePart1(sample))
 		fmt.Println("Part 1 Input :", SolvePart1(input))
-		fmt.Println("Part 2 Sample:", SolvePart2(sample))
-		fmt.Println("Part 2 Input :", SolvePart2(input))
+		// fmt.Println("Part 2 Sample:", SolvePart2(sample))
+		// fmt.Println("Part 2 Input :", SolvePart2(input))
 	},
 }
