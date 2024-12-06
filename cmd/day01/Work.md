@@ -15,13 +15,13 @@ the file.   The run command in `day01.go` now looks like this:
 
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("day01 called")
-		// solve(filepath.Join("data", "day01", "sample.txt"))
-		solve(filepath.Join("data/day01/sample.txt"))
+		// solve(filepath.Join("cmd", "day01", "data", "sample.txt"))
+		solve(filepath.Join("cmd/day01/data/sample.txt"))
 	},
 
 I wasn't sure you could use '/' as a path separator on windows, but it seems
 to work.   `filepath.Join` will use a separator that is proper for the os and
-actually returns `data\day01\sample.txt`, but I'm glad to see that I can use
+actually returns `cmd/day01/data/sample.txt`, but I'm glad to see that I can use
 forward slashes on Windows also because it's easier to read.
 
 I decided to use a 'solve' function taking the path to the input file.
@@ -183,8 +183,8 @@ This returns 11 for the sample (correct), let's try for my input download
 too and submit it...
 
 ```go
-fmt.Println("Solution:", solve(filepath.Join("data/day01/sample.txt")))
-fmt.Println("Solution:", solve(filepath.Join("data/day01/in.txt")))
+fmt.Println("Solution:", solve(filepath.Join("cmd/day01/data/sample.txt")))
+fmt.Println("Solution:", solve(filepath.Join("cmd/day01/data/in.txt")))
 ```
 
 ## Part 2
@@ -295,7 +295,7 @@ numbers separated by any number of spaces.
 
 With these functions, I can use this call:
 
-    numbers := util.LoadString("data/day01/sample.txt")
+    numbers := util.LoadString("cmd/day01/data/sample.txt")
 
 To take the input:
 

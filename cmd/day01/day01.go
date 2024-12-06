@@ -1,7 +1,7 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 */
-package cmd
+package day01
 
 import (
 	"fmt"
@@ -13,21 +13,20 @@ import (
 )
 
 // day01Cmd represents the day01 command
-var day01Cmd = &cobra.Command{
+var Day01Cmd = &cobra.Command{
 	Use:   "day01",
-	Short: "Day 01: Historian Hysteria",
+	Short: "Day 1: Historian Hysteria",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("day01:")
-		fmt.Println("Solution (part 1 sample):", solve(filepath.Join("data/day01/sample.txt")))
-		fmt.Println("Solution (part 1 input ):", solve(filepath.Join("data/day01/input.txt")))
-		fmt.Println("Solution (part 2 sample):", solve2(filepath.Join("data/day01/sample.txt")))
-		fmt.Println("Solution (part 2 input ):", solve2(filepath.Join("data/day01/input.txt")))
+		fmt.Println("Solution (part 1 sample):", solve(filepath.Join("cmd/day01/data/sample.txt")))
+		fmt.Println("Solution (part 1 input ):", solve(filepath.Join("cmd/day01/data/input.txt")))
+		fmt.Println("Solution (part 2 sample):", solve2(filepath.Join("cmd/day01/data/sample.txt")))
+		fmt.Println("Solution (part 2 input ):", solve2(filepath.Join("cmd/day01/data/input.txt")))
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(day01Cmd)
 }
 
 // like 'solve', but shows the parsing functions working

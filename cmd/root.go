@@ -7,6 +7,11 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day01"
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day02"
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day03"
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day04"
+	"github.com/JasonGoemaat/go-advent-of-code-2024/cmd/day05"
 	"github.com/JasonGoemaat/go-advent-of-code-2024/util"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -19,13 +24,8 @@ var EnableLog bool
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "go-advent-of-code-2024",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "My Advent of Code 2024 Solutions",
+	Long:  `Check README.md`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -47,12 +47,21 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.go-advent-of-code-2024.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.go-advent-of-code-2024.yaml)")
 	rootCmd.PersistentFlags().BoolVarP(&util.MyLogEnabled, "log", "l", false, "enables mylog")
+	rootCmd.PersistentFlags().BoolVarP(&util.StdinFlag, "stdin", "", false, "read test data from stdin")
+	rootCmd.PersistentFlags().StringVarP(&util.InputFile, "file", "f", "", "read test data from stdin")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	// add days
+	rootCmd.AddCommand(day01.Day01Cmd)
+	rootCmd.AddCommand(day02.Day02Cmd)
+	rootCmd.AddCommand(day03.Day03Cmd)
+	rootCmd.AddCommand(day04.Day04Cmd)
+	rootCmd.AddCommand(day05.Day05Cmd)
 }
 
 // initConfig reads in config file and ENV variables if set.
